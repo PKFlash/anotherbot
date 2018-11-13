@@ -1,4 +1,4 @@
-//const embed = require('./index.js');
+/*const embed = require('./index.js');
 module.exports = {
     name: 'help',
     description: 'List all of my commands or info about a specific command.',
@@ -8,4 +8,4 @@ module.exports = {
         const data = [];
         const {commands} = message.client;
     },
-};
+};*/

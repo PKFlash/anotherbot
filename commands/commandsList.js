@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+/*const Discord = require("discord.js");
 
 module.exports = {
   name: 'commandsList',
@@ -16,4 +16,4 @@ module.exports = {
 
     message.channel.send({embed1});
   },
-};
+};*/

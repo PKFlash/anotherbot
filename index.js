@@ -28,6 +28,16 @@ const embed = new Discord.RichEmbed()
     "one minute \nknee \nnose \nnightlife \ndrink \nrichie dagger \ndagger.help")
   .addField("Additional info", "Taking a ride to my old haunt \nshe's in my blood, she resides in my nightlife \nmy favorite color's candy apple girl");
 
+  //trigger words
+    const responseObject = {
+      "knee": "my knee, my FUCKING knee",
+      "one minute": "Give me a fucking break, one minute left. One minute fucking left. You're gonna give me fucking one minute? Look at that fucking sign right there, one minute! Let me fucking tell you something, let me tell you something, I've been around since fucking nineteen eighty fucking eight, and you're gonna give me one fucking minute?! You've gotta be fucking kidding me! You're fucking kidding me! What the fuck!? I'm not fucking Justin Bieber, you motherfuckers! You gotta be fucking joking, this is a fucking joke. I got one minute, one minute left. Oh now I got nothing left, now I got nothing left. Let me show you what one fucking minute fucking means!",
+      "nose": "--thrashed on my nose, look at my nose! Look at it! All right, I didn't do nothin' to their shit, they fuckin' grabbed me like--just so they're gonna hit me. It wasn't no accident! I'm just saying--we know who he is! When he comes back here, we're gonna *get* his ass!",
+      "nightlife": "3000 IQ song",
+      "drink": "Drink, yeah? Could you get me one?",
+      "dagger.help": {embed}
+    };
+
 //setup
 client.on("message", (message) => {
 
@@ -35,8 +45,11 @@ client.on("message", (message) => {
 
   if (message.author.bot) return;
 
-//trigger words
-  if (msg.includes("knee")) {
+  if (responseObject[message.content]) {
+    message.channel.send(responseObject[message.content]);
+  }
+
+  /*if (msg.includes("knee")) {
     message.channel.send("my knee, my FUCKING knee");
   } else
 
@@ -50,19 +63,19 @@ client.on("message", (message) => {
 
    if (msg.includes("nightlife")) {
      message.channel.send("You mean, the best song *ever?*");
-   }
+   }*/
 
-   if (msg.includes("drink")) {
+   /*if (msg.includes("drink")) {
      message.channel.send("Drink, yeah? Could you get me one?");
-   }
+   }*/
 
    if (msg.includes("kill me") || msg.includes("end my life") || msg.includes("aaa") || msg.includes("I wanna die") || msg.includes("I want to die") || msg.includes("kms") || msg.includes("commit die")) {
      message.channel.send("Same.");
    }
 
-   if (msg.includes("dagger.help")) {
+   /*if (msg.includes("dagger.help")) {
      message.channel.send({embed});
-   }
+   }*/
 
    if (msg.includes("richie dagger")) {
      const jello1 = "Ray's guitar broke. No, we won't play Rawhide, won't play anything. We'll play the theme from the Dinah Shore show. Who wants to be Dinah Shore? Whose alter-ego is Dinah Shore? Oh, his fists didn't go up so quickly this time. Yawn...yawn..yawn. Put those headphones on, it's be-bop time.";
