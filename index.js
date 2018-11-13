@@ -79,6 +79,18 @@ client.on("message", (message) => {
      }
    }
 
+   if (msg.includes("richie can") || msg.includes("richie will") || msg.includes("richie is")) {
+     const r1 = "Yeah.";
+     const r2 = "Nah.";
+     const r3 = "Why you askin'?";
+     const r4 = "Eh, maybe.";
+     const r5 = "Sure, I guess.";
+     const r6 = "*Never.*";
+     var choices = [r1, r2, r3 ,r4 ,r5 ,r6];
+     var answer = choices[Math.floor(Math.random()*choices.length)];
+     message.channel.send(response).then().catch(console.error);
+   }
+
 });
 
 
