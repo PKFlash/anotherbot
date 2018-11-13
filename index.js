@@ -12,8 +12,6 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-const config = require("./config.json");
-
 client.on("ready", () => {
   console.log("I am ready!");
 });
@@ -122,4 +120,4 @@ const commandName = args.shift().toLowerCase();
 
 });
 
-client.login(config.token);
+client.login(token);
