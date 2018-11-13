@@ -1,3 +1,4 @@
+const Discord = require("discord.js");
 const embed1 = new Discord.RichEmbed()
   .setTitle("**IS THIS WHAT YOU WANT?!**")
   .setAuthor("fuckfuckfuckfuckfuckfuck", "https://cdn.discordapp.com/attachments/500773668440375297/500817119865208863/fuck.JPG")
