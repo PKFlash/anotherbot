@@ -88,7 +88,7 @@ client.on("message", (message) => {
      const r6 = "*Never.*";
      var choices = [r1, r2, r3 ,r4 ,r5 ,r6];
      var answer = choices[Math.floor(Math.random()*choices.length)];
-     message.channel.send(response).then().catch(console.error);
+     message.channel.send(answer).then().catch(console.error);
    }
 
 });
