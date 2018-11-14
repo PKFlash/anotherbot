@@ -4,9 +4,19 @@ module.exports = {
   args: true,
   execute(message, args) {
     let [first, second, third] = args;
-  /*  var verdict1 = args[Math.floor(Math.random()*3)];
-    var verdict2 = "g";
-    var verdict3 = "h"; */
-    message.channel.send(`first ${first}, second ${second}, third ${third}`);
+    var m = args.length, t, i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = args[m];
+      args[m] = args[i];
+      args[i] = t;
+    }
+    message.channel.send(`Fuck ${args[0]}, marry ${args[1]}, kill ${args[2]}`);
   },
 };
