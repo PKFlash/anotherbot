@@ -96,7 +96,7 @@ client.on("message", (message) => {
      const r3 = "Why you askin'?";
      const r4 = "Eh, maybe.";
      const r5 = "Sure, I guess.";
-     const r6 = "*Never.*";
+     const r6 = "Nope.";
      var choices = [r1, r2, r3 ,r4 ,r5 ,r6];
      var answer = choices[Math.floor(Math.random()*choices.length)];
      message.channel.send(answer).then().catch(console.error);
@@ -107,7 +107,7 @@ client.on("message", (message) => {
 
 //commands using ! prefix, defined at the top outside any {}
 client.on("message", (message) => {
-const args = message.content.slice(prefix.length).split(",");
+const args = message.content.slice(prefix.length).split(/ +/);
 const commandName = args.shift().toLowerCase();
 
   // Exit and stop if it's not there
