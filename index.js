@@ -50,7 +50,7 @@ client.on("message", (message) => {
    }
 
    if (msg.includes("nightlife")) {
-     message.channel.send("You mean, the best song *ever?*");
+     message.channel.send("3000 IQ song");
    }
 
    if (msg.includes("drink")) {
@@ -90,7 +90,7 @@ client.on("message", (message) => {
      }
    }
 
-   if (msg.includes("richie can") || msg.includes("richie will") || msg.includes("richie is") || msg.includes("richie was") || msg.includes("richie does") || msg.includes("richie are") || msg.includes("richie did")) {
+   if (msg.includes("richie can") || msg.includes("richie will") || msg.includes("richie is") || msg.includes("richie was") || msg.includes("richie does") || msg.includes("richie are") || msg.includes("richie did") || msg.includes("richie should") || msg.includes("richie am")) {
      const r1 = "Yeah.";
      const r2 = "Nah.";
      const r3 = "Why you askin'?";
@@ -107,7 +107,7 @@ client.on("message", (message) => {
 
 //commands using ! prefix, defined at the top outside any {}
 client.on("message", (message) => {
-const args = message.content.slice(prefix.length).split(/ +/);
+const args = message.content.slice(prefix.length).split(",");
 const commandName = args.shift().toLowerCase();
 
   // Exit and stop if it's not there
