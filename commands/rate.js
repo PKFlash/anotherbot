@@ -8,6 +8,11 @@ module.exports = {
     if (args[0] === "yourself" || args[0] === "richie") {
       message.channel.send("I rate myself a 69/10.");
     }
-    else message.channel.send(`I rate ${args} a ${rating} out of 10.`);
+    else if (rating === 8) {
+      message.channel.send(`I rate ${args} an 8 out of 10.`);
+    }
+    else {
+      message.channel.send(`I rate ${args} a ${rating} out of 10.`);
+    }
   },
 };

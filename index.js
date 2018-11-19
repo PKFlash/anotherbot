@@ -63,8 +63,12 @@ client.on("message", (message) => {
      fck = fck + 1;
    }
 
-   if (msg.includes("kill me") || msg.includes("end my life") || msg.includes("aaa") || msg.includes("I wanna die") || msg.includes("I want to die") || msg.includes("kms") || msg.includes("commit die")) {
+   if (msg.includes("kill me") || msg.includes("end my life") || msg.includes("aaa") || msg.includes("kms") || msg.includes("commit die")) {
      message.channel.send("Same.");
+   }
+
+   if (msg.includes("I wanna die") || msg.includes("I want to die")) {
+     message.channel.send("Me too, man");
    }
 
    if (msg.includes("dagger.help")) {
