@@ -101,11 +101,7 @@ client.on("message", (message) => {
      message.channel.send(answer).then().catch(console.error);
    }
 
-});
-
-
 //commands using ! prefix, defined at the top outside any {}
-client.on("message", (message) => {
 const args = message.content.slice(prefix.length).split(/ +/);
 const commandName = args.shift().toLowerCase();
 
