@@ -5,6 +5,9 @@ module.exports = {
     min = Math.ceil(0);
     max = Math.floor(11);
     var rating = Math.floor(Math.random()*(max - min) + min);
+    if (args === "yourself" || args[0] === "richie") {
+      message.channel.send("I rate myself a 69/10.");
+    }
     message.channel.send(`I rate ${args} a ${rating} out of 10.`);
   },
 };
