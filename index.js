@@ -28,9 +28,6 @@ const embed = new Discord.RichEmbed()
     "one minute \nknee \nnose \nnightlife \ndrink \nrichie dagger \ndagger.help")
   .addField("Additional info", "Taking a ride to my old haunt \nshe's in my blood, she resides in my nightlife \nmy favorite color's candy apple girl");
 
-//fuck counter
-var fck = 0;
-
 //setup
 client.on("message", (message) => {
 
@@ -59,16 +56,8 @@ client.on("message", (message) => {
      message.channel.send("Drink, yeah? Could you get me one?");
    }
 
-   if (msg.includes("fuck") || msg.includes("fck")) {
-     fck = fck + 1;
-   }
-
    if (msg.includes("kill me") || msg.includes("end my life") || msg.includes("aaa") || msg.includes("kms") || msg.includes("commit die")) {
      message.channel.send("Same.");
-   }
-
-   if (msg.includes("I wanna die") || msg.includes("I want to die")) {
-     message.channel.send("Me too, man");
    }
 
    if (msg.includes("dagger.help")) {

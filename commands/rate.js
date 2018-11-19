@@ -5,7 +5,10 @@ module.exports = {
     min = Math.ceil(0);
     max = Math.floor(11);
     var rating = Math.floor(Math.random()*(max - min) + min);
-    if (args[0] === "yourself" || args[0] === "richie") {
+    if (args[0] === "") {
+      message.channel.send("Hey, I got better things to do than rate an empty string.");
+    }
+    else if (args[0] === "yourself" || args[0] === "richie") {
       message.channel.send("I rate myself a 69/10.");
     }
     else if (rating === 8) {
