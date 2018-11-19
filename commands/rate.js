@@ -5,7 +5,7 @@ module.exports = {
     min = Math.ceil(0);
     max = Math.floor(11);
     var rating = Math.floor(Math.random()*(max - min) + min);
-    if (args[0] === "") {
+    if (args[0] === null) {
       message.channel.send("Hey, I got better things to do than rate an empty string.");
     }
     else if (args[0] === "yourself" || args[0] === "richie") {
