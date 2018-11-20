@@ -101,6 +101,10 @@ client.on("message", (message) => {
      message.channel.send(answer).then().catch(console.error);
    }
 
+   if (msg.includes("richie why")) {
+     message.channel.send("I don't fucking know, man.");
+   }
+
 //commands using ! prefix, defined at the top outside any {}
 const args = message.content.slice(prefix.length).split(/ +/);
 const commandName = args.shift().toLowerCase();
