@@ -89,7 +89,7 @@ client.on("message", (message) => {
      }
    }
 
-   if (msg.includes("richie can") || msg.includes("richie will") || msg.includes("richie is") || msg.includes("richie was") || msg.includes("richie does") || msg.includes("richie are") || msg.includes("richie did") || msg.includes("richie should") || msg.includes("richie am")) {
+   if (msg.includes("richie can") || msg.includes("richie will") || msg.includes("richie is") || msg.includes("richie was") || msg.includes("richie does") || msg.includes("richie are") || msg.includes("richie did") || msg.includes("richie should") || msg.includes("richie am") || msg.startsWith("richie do")) {
      const r1 = "Yeah.";
      const r2 = "Nah.";
      const r3 = "Why you askin'?";
