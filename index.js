@@ -53,7 +53,7 @@ client.on("message", (message) => {
    }
 
    if (msg.includes("drink")) {
-     message.channel.send("Drink, yeah? Could you get me one?");
+     message.channel.send("Yeah, we're the Germs, could we get some beer?");
    }
 
    if (msg.includes("kill me") || msg.includes("end my life") || msg.includes("aaa") || msg.includes("kms") || msg.includes("commit die")) {
