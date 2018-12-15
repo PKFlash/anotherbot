@@ -8,7 +8,8 @@ module.exports = {
     const v4 = "https://youtu.be/nwN6dPNXklg";
     const v5 = "https://youtu.be/nwN6dPNXklg";
     const v6 = "https://youtu.be/jO9C7frk2ss";
-    var vids = [v1, v2, v3, v4, v5, v6];
+    const v7 = "https://youtu.be/ktYlzVYQbwY";
+    var vids = [v1, v2, v3, v4, v5, v6, v7];
     var post = vids[Math.floor(Math.random()*vids.length)];
     message.channel.send(post);
   },
