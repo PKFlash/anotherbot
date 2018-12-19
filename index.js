@@ -56,6 +56,10 @@ client.on("message", (message) => {
      message.channel.send("Yeah, we're the Germs, could we get some beer?");
    }
 
+   if (msg.includes("element")) {
+     message.channel.send("Know what pisses me off, huh? You know what- what really gets me mad in this life? It's the goddamn periodic table of elements--they've got 109 or so naturally occuring elements, then they've got 10 or 11 of these non-naturally occuring man-made elements! They give them names like Einsteinium, Californium, and Nobelium--and what I want to know is: if they're man-made just how the hell can they be elements, huh?");
+   }
+
    if (msg.includes("kill me") || msg.includes("end my life") || msg.includes("aaa") || msg.includes("kms") || msg.includes("commit die")) {
      message.channel.send("Same.");
    }
@@ -102,7 +106,17 @@ client.on("message", (message) => {
    }
 
    if (msg.includes("richie why")) {
-     message.channel.send("I don't fucking know, man.");
+     const a1 = "I don't fucking know, man.";
+     const a2 = "Probably 'cause you're gay.";
+     const a3 = "Have you tried googling it, asshole?";
+     const a4 = "Hey, fuck off.";
+     const a5 = "Whatever it is, it's 42.";
+     const a6 = "Could you repeat that dumbass question for the losers in the back?";
+     const a7 = "Dunno, why don't you just type my name until you land the copypasta?";
+     const a8 = "It's your lucky day, 'cause I don't know this one.";
+     var b = [a1, a2, a3, a4, a5, a6, a7, a8];
+     var c = b[Math.floor(Math.random()*b.length)];
+     message.channel.send(c).then().catch(console.error);
    }
 
 //commands using ! prefix, defined at the top outside any {}
