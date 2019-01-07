@@ -120,12 +120,9 @@ client.on("message", (message) => {
    }
 
 //commands using ! prefix, defined at the top outside any {}
-  const x = message.content.slice(prefix.length);
-  const commandName = x.substr(0, x.indexOf(" ")).toLowerCase();
-  const args = x.slice(commandName.length);
 
-//const args = message.content.slice(prefix.length).split(", ");
-//const commandName = args.shift().toLowerCase();
+  const args = message.content.slice(prefix.length).split(", ");
+  const commandName = args.shift().toLowerCase();
 
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
