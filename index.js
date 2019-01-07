@@ -120,7 +120,7 @@ client.on("message", (message) => {
    }
 
 //commands using ! prefix, defined at the top outside any {}
-const args = message.content.slice(prefix.length).split(/ +/);
+const args = message.content.slice(prefix.length).split(", ");
 const commandName = args.shift().toLowerCase();
 
   // Exit and stop if it's not there
