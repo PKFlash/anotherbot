@@ -7,7 +7,7 @@ module.exports = {
     var rating = Math.floor(Math.random()*(max - min) + min);
     var strp = args.join();
 
-    if (!str.replace(/\s/g, '').length) {
+    if (!strp.replace(/\s/g, '').length) {
       message.channel.send("I ain't rating _nothing._");
     }
     else if (strp.startsWith("yourself") || strp.startsWith("richie")) {
