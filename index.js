@@ -141,9 +141,9 @@ client.on("message", (message) => {
 
   const command = client.commands.get(commandName);
 
-  if (command.args && !args.length) {
-    return message.channel.send('You gonna ask me something or what?');
-  }
+//  if (command.args && !args.length) {
+//    return message.channel.send('You gonna ask me something or what?');
+//  }
 
   try {
     command.execute(message, args);
