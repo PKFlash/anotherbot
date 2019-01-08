@@ -13,7 +13,19 @@ module.exports = {
     else if (strp.startsWith("yourself") || strp.startsWith("richie")) {
       message.channel.send("I rate myself a 69/10.");
     }
-    else if (rating === 8) {
+    else if (strp.startsWith("my")) {
+      var str3 = strp.substr(8);
+      const yr = "your ";
+      var str4 = yr.concat(str3);
+
+      if (rating === 8) {
+        message.channel.send(`I rate ${str4} an 8 out of 10.`);
+      }
+      else {
+        message.channel.send(`I rate ${str4} a ${rating} out of 10.`);
+      }
+    }
+    if (rating === 8) {
       message.channel.send(`I rate ${args} an 8 out of 10.`);
     }
     else {
