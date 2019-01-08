@@ -3,6 +3,10 @@ module.exports = {
   description: 'why did I make this',
   args: true,
   execute(message, args) {
+    if (args.length != 4) {
+      message.channel.send("You know how fuck/marry/kill works, don't you?");
+    }
+    else {
     let [first, second, third] = args;
     var m = args.length, t, i;
 
@@ -17,6 +21,6 @@ module.exports = {
       args[m] = args[i];
       args[i] = t;
     }
-    message.channel.send(`Fuck ${args[0]}, marry ${args[1]}, kill ${args[2]}`);
+    message.channel.send(`Fuck ${args[0]}, marry ${args[1]}, kill ${args[2]}`);}
   },
 };
