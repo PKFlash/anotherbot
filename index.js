@@ -127,7 +127,7 @@ client.on("message", (message) => {
 //  const args = x.slice(commandName.length + 1).split(", ");
 
 //const args = message.content.slice(prefix.length).split(", ");
-//const commandName = args.shift().toLowerCase();
+  const commandName = args.shift().toLowerCase();
 
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
