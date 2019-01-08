@@ -28,7 +28,7 @@ module.exports = {
       }
       else if (strp.startsWith("your")) {
         var str5 = strp.substr(5);
-        const yr = "your ";
+        const yr = "my ";
         var str6 = yr.concat(str5);
 
         if (rating === 8) {
