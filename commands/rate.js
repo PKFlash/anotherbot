@@ -6,7 +6,11 @@ module.exports = {
     max = Math.floor(11);
     var rating = Math.floor(Math.random()*(max - min) + min);
     var strp = args.join();
-    if (strp.startsWith("yourself") || strp.startsWith("richie")) {
+
+    if (!str.replace(/\s/g, '').length) {
+      message.channel.send("I ain't rating _nothing._");
+    }
+    else if (strp.startsWith("yourself") || strp.startsWith("richie")) {
       message.channel.send("I rate myself a 69/10.");
     }
     else if (rating === 8) {

@@ -3,7 +3,7 @@ module.exports = {
   description: 'why did I make this',
   args: true,
   execute(message, args) {
-    if (args.length != 4) {
+    if (args.length != 3) {
       message.channel.send("You know how fuck/marry/kill works, don't you?");
     }
     else {
