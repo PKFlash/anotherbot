@@ -14,7 +14,7 @@ module.exports = {
       message.channel.send("I rate myself a 69/10.");
     }
     else if (strp.startsWith("my")) {
-      var str3 = strp.substr(8);
+      var str3 = strp.substr(3);
       const yr = "your ";
       var str4 = yr.concat(str3);
 
