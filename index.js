@@ -120,7 +120,12 @@ client.on("message", (message) => {
    }
 
 //commands using ! prefix, defined at the top outside any {}
-  const args = message.content.slice(prefix.Length).split(/\s+/g);
+  const args1 = message.content.slice(prefix.length);
+  const args2 = args1.split(" ", 1);
+  const str2 = args2.join();
+  const str1 = args1.slice(str2.length +1);
+  const args3 = str1.split(", ");
+  const args = args2.concat(args3);
 
 //  const x = message.content.slice(prefix.length);
 //  const commandName = x.substr(0, x.indexOf(" ")).toLowerCase();
