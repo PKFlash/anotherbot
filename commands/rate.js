@@ -40,7 +40,7 @@ module.exports = {
       }
       else if (strp === "me") {
         var str7 = strp.substr(3);
-        const yr2 = "you ";
+        const yr2 = "you";
         var str8 = yr2.concat(str7);
 
         if (rating === 8) {
