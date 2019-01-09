@@ -16,7 +16,7 @@ module.exports = {
 
       else if (strp.startsWith("my")) {
         var str3 = strp.substr(3);
-        const yr = "your ";
+        const yr0 = "your ";
         var str4 = yr.concat(str3);
 
         if (rating === 8) {
@@ -28,7 +28,7 @@ module.exports = {
       }
       else if (strp.startsWith("your")) {
         var str5 = strp.substr(5);
-        const yr = "my ";
+        const yr1 = "my ";
         var str6 = yr.concat(str5);
 
         if (rating === 8) {
@@ -36,6 +36,18 @@ module.exports = {
         }
         else {
           message.channel.send(`I rate ${str6} a ${rating} out of 10.`);
+        }
+      }
+      else if (strp.equals("me")) {
+        var str7 = strp.substr(3);
+        const yr2 = "you ";
+        var str8 = yr.concat(str7);
+
+        if (rating === 8) {
+          message.channel.send(`I rate ${str8} an 8 out of 10.`);
+        }
+        else {
+          message.channel.send(`I rate ${str8} a ${rating} out of 10.`);
         }
       }
 

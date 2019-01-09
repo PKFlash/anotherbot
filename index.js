@@ -127,11 +127,6 @@ client.on("message", (message) => {
   const args3 = str1.split(", ");
   const args = args2.concat(args3);
 
-//  const x = message.content.slice(prefix.length);
-//  const commandName = x.substr(0, x.indexOf(" ")).toLowerCase();
-//  const args = x.slice(commandName.length + 1).split(", ");
-
-//const args = message.content.slice(prefix.length).split(", ");
   const commandName = args.shift().toLowerCase();
 
   // Exit and stop if it's not there
@@ -140,10 +135,6 @@ client.on("message", (message) => {
   if (!client.commands.has(commandName)) return;
 
   const command = client.commands.get(commandName);
-
-//  if (command.args && !args.length) {
-//    return message.channel.send('You gonna ask me something or what?');
-//  }
 
   try {
     command.execute(message, args);
