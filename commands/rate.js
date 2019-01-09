@@ -38,7 +38,7 @@ module.exports = {
           message.channel.send(`I rate ${str6} a ${rating} out of 10.`);
         }
       }
-      else if (strp.equals("me")) {
+      else if (strp === "me") {
         var str7 = strp.substr(3);
         const yr2 = "you ";
         var str8 = yr.concat(str7);
