@@ -8,7 +8,9 @@ module.exports = {
       const b4 = "Mom and Dad don't like me\nThey say I'm mean and crude\nOh, they tried to make me a good little worm\nThey're sticking downers in my food";
       const b5 = "Beach party Vietnam\nSurfin' with the Viet Cong\nCookin' hot dogs with napalm\nA beach party Vietnam";
       const b6 = "Violence isn't the only option...till my fist hits your face!";
-      var lyricArray = [b1, b2, b3, b4, b5, b6];
+      const b7 = "Excuse me while I puke and die...";
+      const b8 = "There's a time for taking\nAnd a time for giving\nBut ripping off the Butthole Surfers\nIs how we make our living";
+      var lyricArray = [b1, b2, b3, b4, b5, b6, b7, b8];
       var lyricSend = lyricArray[Math.floor(Math.random()*lyricArray.length)];
       message.channel.send(lyricSend).then().catch(console.error);
     },
