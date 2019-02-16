@@ -57,7 +57,7 @@ client.on("message", (message) => {
    }
 
    if (msg.includes("element")) {
-     message.channel.send("Know what pisses me off, huh? You know what- what really gets me mad in this life? It's the goddamn periodic table of elements--they've got 109 or so naturally occuring elements, then they've got 10 or 11 of these non-naturally occuring man-made elements! They give them names like Einsteinium, Californium, and Nobelium--and what I want to know is: if they're man-made just how the hell can they be elements, huh?");
+     message.channel.send("Know what pisses me off, huh? You know what--what really gets me mad in this life? It's the goddamn periodic table of elements--they've got 109 or so naturally occuring elements, then they've got 10 or 11 of these non-naturally occuring *man-made* elements! They give them names like Einsteinium, Californium, and Nobelium--and what I want to know is: if they're man-made, just how the hell can they be elements, huh?");
    }
 
    if (msg.includes("kill me") || msg.includes("end my life") || msg.includes("aaa") || msg.includes("kms") || msg.includes("commit die")) {
