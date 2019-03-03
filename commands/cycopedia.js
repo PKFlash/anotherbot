@@ -2,12 +2,21 @@ module.exports = {
   name: 'cycopedia',
   description: 'the big one',
   execute(message, args) {
-  if(message.member.roles.some(role => role.name === 'meme god')) {
-      message.channel.send("Test successful.");
+    const fs = require('fs');
+    client.cycopedia = require("./cycopedia.json");
+
+  if (args === "find") {
+    message.channel.send("Input tags.");
   }
-  //Add, delete, and edit commands
-  if(!message.member.roles.some(role => role.name === 'meme god')) {
-        return message.reply("Nice try.");
-      }
+
+  if (args === "add") {
+    if(message.member.roles.some(role => role.name === 'meme god')) {
+      message.channel.send("Test successful.");
+    }
+    //Add, delete, and edit commands
+    if(!message.member.roles.some(role => role.name === 'meme god')) {
+      return message.reply("Nice try.");
+    }
+  }
     },
 };

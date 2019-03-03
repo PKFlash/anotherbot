@@ -4,8 +4,7 @@ const token = process.env.token;
 const prefix = process.env.prefix;
 
 const client = new Discord.Client();
-//const SQLite = require("better-sqlite3");
-//const sql = new SQLite('./cycopedia.sqlite');
+client.cycopedia = require("./cycopedia.json");
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('js'));
 
