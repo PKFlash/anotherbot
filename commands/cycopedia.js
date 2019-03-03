@@ -27,16 +27,21 @@ module.exports = {
         message.channel.send("Input artist, album name, year, and tags (separate tags by spaces, not commas).");
       }
       else {
-        //var data = JSON.stringify(words, null, 2);
-        //client.cycopedia[] = {
-        //message:
+        let [cmd, name, album, year, tags] = info;
+        client.cycopedia[message.author.username] = {
+          message: info[1];
+        }
+
         fs.writeFile("cycopedia.json", JSON.stringify(client.cycopedia, null, 4), err => {
           if (err) throw err;
-          message.channel.send("you good");}
-        );
+          else {
+            message.channel.send("got it");
+          }
         }
+        );
       }
     }
+  }
     //Add, delete, and edit commands
     if(!message.member.roles.some(role => role.name === 'meme god')) {
       return message.reply("Nice try.");
