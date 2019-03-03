@@ -27,9 +27,9 @@ module.exports = {
         message.channel.send("Input artist, album name, year, and tags (separate tags by spaces, not commas).");
       }
       else {
-        let [cmd, name, album, year, tags] = info;
+        let [cmd, name, album, year, tags] = args;
         client.cycopedia[message.author.username] = {
-          message: info[1]
+          message: args[1]
         }
 
         fs.writeFile("cycopedia.json", JSON.stringify(client.cycopedia, null, 4), err => {
