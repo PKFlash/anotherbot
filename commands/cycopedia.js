@@ -27,8 +27,8 @@ module.exports = {
         message.channel.send("Input artist, album name, year, and tags (separate tags by spaces, not commas).");
       }
       else {
-        client.cycopedia[] = {
-        message:
+        //client.cycopedia[] = {
+        //message:
         }
       }
     }
