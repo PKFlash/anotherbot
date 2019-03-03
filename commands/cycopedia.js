@@ -16,8 +16,10 @@ module.exports = {
       message.channel.send("What you're looking for is *find* and then *year*, *tag*, or *artist*." );
     }
     else {
-    let [first, second] = args;
-    console.log(words);
+      let [first, second] = args;
+      console.log(words);
+      let info = client.cycopedia[message.author.username].message;
+      message.channel.send(info);
     }
   }
 
