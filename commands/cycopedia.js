@@ -3,6 +3,7 @@ module.exports = {
   description: 'the big one',
   execute(message, args) {
     const fs = require('fs');
+    var {client} = require("./index.js");
     client.cycopedia = require("./cycopedia.json");
 
   if (args === "find") {
