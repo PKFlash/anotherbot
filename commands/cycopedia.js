@@ -29,7 +29,7 @@ module.exports = {
       else {
         let [cmd, name, album, year, tags] = info;
         client.cycopedia[message.author.username] = {
-          message: info[1];
+          message: info[1]
         }
 
         fs.writeFile("cycopedia.json", JSON.stringify(client.cycopedia, null, 4), err => {
