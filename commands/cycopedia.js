@@ -27,8 +27,13 @@ module.exports = {
         message.channel.send("Input artist, album name, year, and tags (separate tags by spaces, not commas).");
       }
       else {
+        //var data = JSON.stringify(words, null, 2);
         //client.cycopedia[] = {
         //message:
+        fs.writeFile("cycopedia.json", JSON.stringify(client.cycopedia, null, 4, err => [
+          if (err) throw err;
+          message.channel.send("you good");
+        ]))
         }
       }
     }
