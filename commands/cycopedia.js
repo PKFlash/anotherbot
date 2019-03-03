@@ -6,7 +6,7 @@ module.exports = {
     var {client} = require("./../index.js");
     client.cycopedia = require("./../cycopedia.json");
 
-    var data = fs.readFileSync('./../cycopedia.json');
+    var data = fs.readFileSync('cycopedia.json');
     var words = JSON.parse(data);
 
   //Structure: !cycopedia [find, add, edit, remove]0, [year, tag, artist]1
