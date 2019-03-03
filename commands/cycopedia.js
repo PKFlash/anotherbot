@@ -30,10 +30,10 @@ module.exports = {
         //var data = JSON.stringify(words, null, 2);
         //client.cycopedia[] = {
         //message:
-        fs.writeFile("cycopedia.json", JSON.stringify(client.cycopedia, null, 4), err => [
+        fs.writeFile("cycopedia.json", JSON.stringify(client.cycopedia, null, 4), err => {
           if (err) throw err;
-          message.channel.send("you good");
-        ]))
+          message.channel.send("you good");}
+        );
         }
       }
     }
