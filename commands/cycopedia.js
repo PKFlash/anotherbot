@@ -3,8 +3,8 @@ module.exports = {
   description: 'the big one',
   execute(message, args) {
     const fs = require('fs');
-    var {client} = require("./index.js");
-    client.cycopedia = require("./cycopedia.json");
+    var {client} = require(".anotherbot/index.js");
+    client.cycopedia = require(".anotherbot/cycopedia.json");
 
   if (args === "find") {
     message.channel.send("Input tags.");
