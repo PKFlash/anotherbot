@@ -8,6 +8,7 @@ module.exports = {
 
     var data = fs.readFileSync('cycopedia.json');
     var words = JSON.parse(data);
+    var msc = [];
 
   //Structure: !cycopedia [find, add, edit, remove]0, [year, tag, artist]1
 
@@ -18,11 +19,22 @@ module.exports = {
       }
       else {
         let [cmd, name, album, year, tags] = args;
+
+        for(var i in msc){
+          var item = msc[i];
+          msc.push({
+            "name" : item.name,
+            "album" : item.album,
+            "year" : item.year,
+            "tags" : item.tags
+          });
+        }
+
         client.cycopedia[message.author.username] = {
           message: message.content
         }
 
-        fs.writeFile("cycopedia.json", JSON.stringify(client.cycopedia, null, 4), err => {
+        fs.writeFile("cycopedia.json", JSON.stringify(msc, null, 4), err => {
           if (err) throw err;
           else {
             message.channel.send("got it");
@@ -42,7 +54,7 @@ module.exports = {
     }
     else {
       let [first, second] = args;
-      let info = client.cycopedia[message.author.username].message;
+      let info = client.cycopedia.msc;
       message.channel.send(info);
     }
   }
