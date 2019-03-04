@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'help',
-  description: 'pls work',
+  name: 'post',
+  description: 'oooops',
   execute(message, args) {
     if (args.length != 1) {
       message.channel.send("Pick one thing and stick with it.");}
