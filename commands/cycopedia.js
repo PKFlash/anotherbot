@@ -58,10 +58,6 @@ module.exports = {
       message.channel.send("Found.");
     }
   }
-
-  catch (error) {
-    console.error(error);
-    message.reply("hey, fuck off.");
-  }
+  
     },
 };
