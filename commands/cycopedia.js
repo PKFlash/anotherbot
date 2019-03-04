@@ -42,7 +42,6 @@ module.exports = {
     }
     else {
       let [first, second] = args;
-      console.log(words);
       let info = client.cycopedia[message.author.username].message;
       message.channel.send(info);
     }
