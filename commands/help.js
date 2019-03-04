@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports = {
+module.exports.run = async (bot, message, args) => {
     name: 'help',
     description: 'List all of my commands or info about a specific command.',
     aliases: ['commands'],
@@ -16,7 +16,7 @@ module.exports = {
           "one minute \nknee \nnose \nnightlife \ndrink \nrichie dagger \ndagger.help")
         .addField("Additional info", "Taking a ride to my old haunt \nshe's in my blood, she resides in my nightlife \nmy favorite color's candy apple girl");
 
-      message.channel.send({hEmbed});
+      message.channel.send(hEmbed);
         //const data = [];
         //const {commands} = message.client;
     },
