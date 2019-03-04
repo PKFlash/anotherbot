@@ -3,7 +3,9 @@ module.exports = {
   description: 'pls work',
   execute(message, args) {
     const Discord = require("discord.js");
-    var {client} = require("./../index.js");
-    message.channel.send({embed});
+    const embed = require('./embed.js');
+
+    let hEmbed = require('./embed.js');
+    message.channel.send({embed: hEmbed}).catch((e) => { console.log(e); });
   },
 };
