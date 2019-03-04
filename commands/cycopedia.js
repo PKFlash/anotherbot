@@ -54,10 +54,14 @@ module.exports = {
     }
     else {
       let [first, second] = args;
-      let info = client.cycopedia.msc;
-      message.channel.send(info);
+      //let info = client.cycopedia.msc;
+      message.channel.send("Found.");
     }
   }
 
+  catch (error) {
+    console.error(error);
+    message.reply("hey, fuck off.");
+  }
     },
 };
