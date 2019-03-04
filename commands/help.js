@@ -16,7 +16,7 @@ module.exports = {
           "one minute \nknee \nnose \nnightlife \ndrink \nrichie dagger \ndagger.help")
         .addField("Additional info", "Taking a ride to my old haunt \nshe's in my blood, she resides in my nightlife \nmy favorite color's candy apple girl");
 
-      message.channel.send({embed});
+      message.channel.send({hEmbed});
         //const data = [];
         //const {commands} = message.client;
     },
