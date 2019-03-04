@@ -18,7 +18,7 @@ client.on("ready", () => {
   console.log("All right, all right, I'm up...");
 });
 
-//the embed
+/*the embed
 const embed = new Discord.RichEmbed()
   .setTitle("**IS THIS WHAT YOU WANT?!**")
   .setAuthor("fuckfuckfuckfuckfuckfuck", "https://cdn.discordapp.com/attachments/500773668440375297/500817119865208863/fuck.JPG")
@@ -29,7 +29,7 @@ const embed = new Discord.RichEmbed()
   .addField("Landmines",
     "one minute \nknee \nnose \nnightlife \ndrink \nrichie dagger \ndagger.help")
   .addField("Additional info", "Taking a ride to my old haunt \nshe's in my blood, she resides in my nightlife \nmy favorite color's candy apple girl");
-
+*/
 //setup
 client.on("message", (message) => {
 
@@ -66,10 +66,10 @@ client.on("message", (message) => {
      message.channel.send("Same.");
    }
 
-   if (msg.includes("dagger.help")) {
+  /* if (msg.includes("dagger.help")) {
      message.channel.send({embed});
    }
-
+*/
    if (msg.includes("richie dagger")) {
      const jello1 = "Ray's guitar broke. No, we won't play Rawhide, won't play anything. We'll play the theme from the Dinah Shore show. Who wants to be Dinah Shore? Whose alter-ego is Dinah Shore? Oh, his fists didn't go up so quickly this time. Yawn...yawn..yawn. Put those headphones on, it's be-bop time.";
      const jello2 = "I want to tell you a story about the last time I was in Portland. The night before we played at the Long Goodbye. I was walking on the street about 10:30 at night. A lot of people go to bed around here at 10:30 at night. And well, I was walking along when suddenly these jocks in this bright blue pickup drove up. It had KC lights, tractor tires, everything but the CB.";
