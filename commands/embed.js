@@ -11,6 +11,6 @@ const embed = new Discord.RichEmbed()
   .addField("Landmines",
     "one minute \nknee \nnose \nnightlife \ndrink \nelement \nrichie dagger")
   .addField("Additional info", "Taking a ride to my old haunt \nshe's in my blood, she resides in my nightlife \nmy favorite color's candy apple girl")
-  .addField("Ask me questions, I fucking dare you!");
+  .addField("Ask me questions, I fucking dare you!", "I mean it, motherfucker");
 
 module.exports = (embed);

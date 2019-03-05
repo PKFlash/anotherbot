@@ -58,6 +58,6 @@ module.exports = {
       message.channel.send("Found.");
     }
   }
-  
+
     },
 };
