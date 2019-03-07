@@ -12,12 +12,12 @@ module.exports = {
 
   //Structure: !cycopedia [find, add, edit, remove]0, [year, tag, artist]1
 
-  function Entry(name, album, year, tags) {
+  /*function Entry(name, album, year, tags) {
     this.name = name;
     this.album = album;
     this.year = year;
     this.tags = tags;
-  }
+  }*/
 
 
     if(message.member.roles.some(role => role.name === 'meme god')) {
