@@ -55,6 +55,6 @@ module.exports = {
     if(!message.member.roles.some(role => role.name === 'meme god')) {
       return message.reply("Nice try.");
     }
-
+  }
     },
 };
