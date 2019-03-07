@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'cycopedia',
+  name: 'cycopediaAdd',
   description: 'the big one',
   execute(message, args) {
     const fs = require('fs');
@@ -12,13 +12,22 @@ module.exports = {
 
   //Structure: !cycopedia [find, add, edit, remove]0, [year, tag, artist]1
 
-  if (args[0] === "add") {
+  function Entry(name, album, year, tags) {
+    this.name = name;
+    this.album = album;
+    this.year = year;
+    this.tags = tags;
+  }
+
+
     if(message.member.roles.some(role => role.name === 'meme god')) {
-      if (args.length != 5){
+      if (args.length != 4){
         message.channel.send("Input artist, album name, year, and tags (separate tags by spaces, not commas).");
       }
       else {
-        let [cmd, name, album, year, tags] = args;
+        message.channel.send("cool");
+        /*let [name1, album1, year1, tags1] = args;
+        var entry1 = new Entry(name1, album1, year1, tags1);
 
         for(var i in msc){
           var item = msc[i];
@@ -41,23 +50,11 @@ module.exports = {
           }
         }
         );
-      }
+      }*/
     }
     if(!message.member.roles.some(role => role.name === 'meme god')) {
       return message.reply("Nice try.");
     }
-  }
-
-  if (args[0] === "find") {
-    if (args.length != 2) {
-      message.channel.send("What you're looking for is *find* and then *year*, *tag*, or *artist*." );
-    }
-    else {
-      let [first, second] = args;
-      //let info = client.cycopedia.msc;
-      message.channel.send("Found.");
-    }
-  }
 
     },
 };
