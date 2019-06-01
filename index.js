@@ -2,6 +2,8 @@ const fs = require('fs');
 const Discord = require("discord.js");
 const token = process.env.token;
 const prefix = process.env.prefix;
+var date = new Date();
+var current_hour = date.getHours();
 
 const client = new Discord.Client();
 module.exports = {client};

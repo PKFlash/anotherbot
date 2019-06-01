@@ -1,7 +1,7 @@
-put all question words into an array or something to condense that function
 commands list
 other alignment charts?
 array database of songs with inputs from user
 photo editing?
 if message starts with prefix, don't post copypasta
 object > array list of objects > search function > hash map?
+sleep function
