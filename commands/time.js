@@ -1,3 +1,4 @@
+/*
 module.exports = {
   name: 'time',
   description: 'test function',
@@ -8,3 +9,4 @@ module.exports = {
   }
   },
 };
+*/
