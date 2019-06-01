@@ -6,6 +6,5 @@ module.exports = {
     var current_hour = date.getHours();
     var d = current_hour.toString();
     message.channel.send(d);
-  }
   },
 };
