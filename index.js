@@ -2,7 +2,7 @@ const fs = require('fs');
 const Discord = require("discord.js");
 const token = process.env.token;
 const prefix = process.env.prefix;
-const SQLite = require("better-sqlite3");
+const SQLite = require("./node_modules/better-sqlite3");
 const sql = new SQLite('./scores.sqlite');
 
 const client = new Discord.Client();
