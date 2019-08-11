@@ -2,8 +2,8 @@ const fs = require('fs');
 const Discord = require("discord.js");
 const token = process.env.token;
 const prefix = process.env.prefix;
-//const SQLite = require("better-sqlite3");
-//const sql = new SQLite('./scores.sqlite');
+const SQLite = require("better-sqlite3");
+const sql = new SQLite('./scores.sqlite');
 
 const client = new Discord.Client();
 module.exports = {client};
@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 
 client.on("ready", () => {
   console.log("All right, all right, I'm up...");
-  /*const table = sql.prepare("SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'scores';")
+  const table = sql.prepare("SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'scores';")
   if (!table['count(*)']) {
     //Create the table and set up the database if the table isn't there.
     sql.prepare("CREATE TABLE scores(id TEXT PRIMARY KEY, user TEXT, guild TEXT, points INTEGER, level INTEGER);").run();
@@ -30,7 +30,7 @@ client.on("ready", () => {
 
   //Prepared statements to set score data.
   client.getScore = sql.prepare("SELECT * FROM scores WHERE user = ? AND guild = ?");
-  client.setScore = sql.prepare("INSERT OR REPLACE INTO scores (id, user, guild, points, level) VALUES (@id, @user, @guild, @points, @level);");*/
+  client.setScore = sql.prepare("INSERT OR REPLACE INTO scores (id, user, guild, points, level) VALUES (@id, @user, @guild, @points, @level);");
 });
 
 //setup
@@ -121,7 +121,7 @@ client.on("message", (message) => {
    }
 
    //Fuck counter
-  /* let score;
+  let score;
    if (message.guild) {
      score = client.getScore.get(message.author.id, message.guild.id);
      //Set initial values for new users.
@@ -156,7 +156,7 @@ client.on("message", (message) => {
          embed2.addField(client.users.get(data.user).tag, `${data.points} points (level ${data.level})`);
        }
        return message.channel.send({embed2});
-   }*/
+   }
 
 //commands using ! prefix, defined at the top outside any {}
   const args1 = message.content.slice(prefix.length);
