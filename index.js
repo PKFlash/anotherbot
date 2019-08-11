@@ -142,7 +142,7 @@ client.on("message", (message) => {
      client.setScore.run(score);
    }
    if (msg.startsWith("richie how many points")) {
-     return message.reply(`You've said fuck ${score.points} times and are level ${score.level} of giving a fuck.`);}
+     return message.reply(`You've said fuck ${score.points} times and are level ${score.level} of giving a fuck.`);
    }
    if (msg.startsWith("richie leaderboard")) {
      const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
