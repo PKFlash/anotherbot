@@ -2,10 +2,12 @@ const fs = require('fs');
 const Discord = require("discord.js");
 const token = process.env.token;
 const prefix = process.env.prefix;
+const SQLite = require("better-sqlite3");
+const sql = new SQLite('./scores.sqlite');
 
 const client = new Discord.Client();
 module.exports = {client};
-client.cycopedia = require("./cycopedia.json");
+//client.cycopedia = require("./cycopedia.json");
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('js'));
 
@@ -16,6 +18,19 @@ for (const file of commandFiles) {
 
 client.on("ready", () => {
   console.log("All right, all right, I'm up...");
+  const table = sql.prepare("SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'scores';")
+  if (!table['count(*)']) {
+    //Create the table and set up the database if the table isn't there.
+    sql.prepare("CREATE TABLE scores(id TEXT PRIMARY KEY, user TEXT, guild TEXT, points INTEGER, level INTEGER);").run();
+    //Ensure the "id" row is always unique and balanced
+    sql.prepare("CREATE UNIQUE INDEX idx_scores_id ON scores(id);").run();
+    sql.pragma("synchronous = 1");
+    sql.pragma("journal_mode = wal");
+  }
+
+  //Prepared statements to set score data.
+  client.getScore = sql.prepare("SELECT * FROM scores WHERE user = ? AND guild = ?");
+  client.setScore = sql.prepare("INSERT OR REPLACE INTO scores (id, user, guild, points, level) VALUES (@id, @user, @guild, @points, @level);");
 });
 
 //setup
@@ -103,6 +118,28 @@ client.on("message", (message) => {
      var b = [a1, a2, a3, a4, a5, a6, a7, a8];
      var c = b[Math.floor(Math.random()*b.length)];
      message.channel.send(c).then().catch(console.error);
+   }
+
+   //Fuck counter
+   let score;
+   if (message.guild) {
+     score = client.getScore.get(message.author.id, message.guild.id);
+     //Set initial values for new users.
+     if (!score) {
+       score = {id: `${message.guild.id}-${message.author.id}`, user: message.author.id, guild: message.guild.id, points: 0, level:1}
+     }
+     //increment points
+     if (msg.includes("fuck")){
+       score.points++;
+     }
+     //check for level ups
+     const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
+     if (score.level < curLevel) {
+       score.level++;
+       message.reply(`You've leveled up to level **${curLevel}**! Say fuck again, I dare you.`);
+     }
+     //insert or replace function defined earlier
+     client.setScore.run(score);
    }
 
 //commands using ! prefix, defined at the top outside any {}
