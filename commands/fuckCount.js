@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
   name: 'fuckCount',
   description: 'sql tutorial garbage',
   args: true,
@@ -23,4 +23,4 @@ module.exports = {
         return message.channel.send({embed2});
     }
   },
-};
+};*/

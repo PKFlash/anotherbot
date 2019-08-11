@@ -141,6 +141,22 @@ client.on("message", (message) => {
      //insert or replace function defined earlier
      client.setScore.run(score);
    }
+   if (msg.startsWith("richie how many points")) {
+     return message.reply(`You've said fuck ${score.points} times and are level ${score.level} of giving a fuck.`);}
+   }
+   if (msg.startsWith("richie leaderboard")) {
+     const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
+     const embed2 = new Discord.RichEmbed()
+       .setTitle("Leaderboard")
+       .setAuthor(client.user.username, client.user.avatarURL)
+       .setDescription("Top 10 Sailor-Mouths")
+       .setColor("#00f9ff");
+
+       for(const data of top10) {
+         embed2.addField(client.users.get(data.user).tag, `${data.points} points (level ${data.level})`);
+       }
+       return message.channel.send({embed2});
+   }
 
 //commands using ! prefix, defined at the top outside any {}
   const args1 = message.content.slice(prefix.length);
