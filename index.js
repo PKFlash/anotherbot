@@ -4,6 +4,7 @@ const token = process.env.token;
 const prefix = process.env.prefix;
 const SQLite = require("better-sqlite3");
 const sql = new SQLite('./scores.sqlite');
+const sql2 = new SQLite('./cycopedia.sqlite');
 
 const client = new Discord.Client();
 module.exports = {client};
@@ -26,6 +27,12 @@ client.on("ready", () => {
     sql.prepare("CREATE UNIQUE INDEX idx_scores_id ON scores(id);").run();
     sql.pragma("synchronous = 1");
     sql.pragma("journal_mode = wal");
+
+  const table2 = sql2.prepare("SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'cycopedia';")
+  if (!table['count(*)']) {
+    sql2.prepare("CREATE TABLE cycopedia(id TEXT PRIMARY KEY, artist TEXT, album TEXT, year INTEGER, tags TEXT);").run();
+
+  }
   }
 
   //Prepared statements to set score data.
@@ -72,14 +79,14 @@ client.on("message", (message) => {
    if (msg.includes("richie dagger")) {
      const jello1 = "Ray's guitar broke. No, we won't play Rawhide, won't play anything. We'll play the theme from the Dinah Shore show. Who wants to be Dinah Shore? Whose alter-ego is Dinah Shore? Oh, his fists didn't go up so quickly this time. Yawn...yawn..yawn. Put those headphones on, it's be-bop time.";
      const jello2 = "I want to tell you a story about the last time I was in Portland. The night before we played at the Long Goodbye. I was walking on the street about 10:30 at night. A lot of people go to bed around here at 10:30 at night. And well, I was walking along when suddenly these jocks in this bright blue pickup drove up. It had KC lights, tractor tires, everything but the CB.";
-     const jello3 = "It was a life-size Hot Wheels car for some dumb rich kid, right. Well, they drove up to me and they yelled what dumb rich kids usually yell--*Hey, faggot,* and showered me with some water. So, I stood there thinking, *what a bunch of fuckheads* and picked up a rock. Now, I waited, walked down about a block to where the Kentucky Fried Chicken is, on Burnside, and sure enough they drove around again.";
-     const jello4 = "They said, *Hey, faggot, where's the nearest McDonald's?* I said, *I don't know* and they squirted me again. So I threw the rock! and put a nice-size dent in their giant Hot Wheels car. They screeched to a halt in the parking lot of some department store, whose name I don't remember, it's up the street from Fred Meyer, and they got out their clubs and they ran after me, yelling, *We're gonna kill you, you goddamn faggot, we're gonna kill you, you motherfucker!*";
-     const jello5 = "So I got in a phonebooth by the Kentucky Fried Chicken on Burnside, held my legs straight out like this so they couldn't open the door to the phonebooth. So they began charging the phonebooth, beating on it with their club, yelling, *We're gonna kill you, you motherfucker, we're gonna kill you, you god damn faggot.* I just looked at them.";
+     const jello3 = "It was a life-size Hot Wheels car for some dumb rich kid, right. Well, they drove up to me and they yelled what dumb rich kids usually yell--*Hey, f----,* and showered me with some water. So, I stood there thinking, *what a bunch of fuckheads* and picked up a rock. Now, I waited, walked down about a block to where the Kentucky Fried Chicken is, on Burnside, and sure enough they drove around again.";
+     const jello4 = "They said, *Hey, f----, where's the nearest McDonald's?* I said, *I don't know* and they squirted me again. So I threw the rock! and put a nice-size dent in their giant Hot Wheels car. They screeched to a halt in the parking lot of some department store, whose name I don't remember, it's up the street from Fred Meyer, and they got out their clubs and they ran after me, yelling, *We're gonna kill you, you goddamn f----, we're gonna kill you, you motherfucker!*";
+     const jello5 = "So I got in a phonebooth by the Kentucky Fried Chicken on Burnside, held my legs straight out like this so they couldn't open the door to the phonebooth. So they began charging the phonebooth, beating on it with their club, yelling, *We're gonna kill you, you motherfucker, we're gonna kill you, you god damn f----.* I just looked at them.";
      const jello6 = "So, there was a crowd gathering by this time and these kids were standing nearby and they said, *Oh, look at him, he's insane.* I thought, *ah-hah, here's my way out!* I yelled at them, *Take me to a mental hospital right away! I wanna be be put away! Please put me away, c'mon, call the cops and put me away! Please put me away now!*";
-     const jello7 = "They said, *All right, faggot, we're calling the police.* So they called the police. The cop comes out and I go, *ah, my savior, I'm away from these jocks.* He opens up the door, *Get out of there, you,* throws me up against the car, frisks me, shoves me in the back. Then he goes over to the jocks, *Now what happened here? It looks like we're going have to take him to jail but we got to have the full story first.*";
+     const jello7 = "They said, *All right, f----, we're calling the police.* So they called the police. The cop comes out and I go, *ah, my savior, I'm away from these jocks.* He opens up the door, *Get out of there, you,* throws me up against the car, frisks me, shoves me in the back. Then he goes over to the jocks, *Now what happened here? It looks like we're going have to take him to jail but we got to have the full story first.*";
      const jello8 = "So the jocks, who had an ace in the hole, ace in the hole--! Take down on the bass, a little bit down on the bass. Yeah, ace in the hole, and they go, *Well, goddammit, the motherfucker put a dent in my truck, a $5000 truck, right, so I got my club, I went out and I wanted to kill him. I want to kill him! Let me kill him, goddammit! Let me kill him!*";
      const jello9 = "So the cop made them go home, and he drove me home, and he confiscated their club and my rock as further evidence. And I thought, *so this is Oregon, huh? Tolerant Oregon.* Ray, are you done with your guitar yet? He isn't done yet. So what else do you want to hear, I'm out of stories. That's a true story, too. Just ask Bruce Loose.";
-     var options = ["<:germ:501098082629451788>", "<:fuck:493591715156983808>", "<:baku:454446735461187595>", "<:kiri:480426336679231528>","<:gotem:494306244069163058>", "<:onion:500760803360636929>", "<:lemo:500760832230031370>", jello1];
+     var options = ["<:nuss:529107258408173568>", "<:fuck:493591715156983808>", "<:baku:454446735461187595>", "<:kiri:480426336679231528>","<:gotem:494306244069163058>", "<:guy_fieri:553664131128098846>", "<:bruh:592886515265437719>", "<:bonk:710399056324591686>", "<:cri:516996146753962005>", "<:cursed:638945238118957077>", jello1];
      var response = options[Math.floor(Math.random()*options.length)];
      message.channel.send(response).then().catch(console.error);
      if (response == jello1) {
@@ -141,8 +148,8 @@ client.on("message", (message) => {
      //insert or replace function defined earlier
      client.setScore.run(score);
    }
-   if (msg.startsWith("richie how many points")) {
-     return message.reply(`You've said fuck ${score.points} times and are level ${score.level} of giving a fuck.`);
+   if (msg.startsWith("richie points")) {
+     return message.reply(`you've said fuck ${score.points} times and are level ${score.level} of giving a fuck.`);
    }
    if (msg.startsWith("richie leaderboard")) {
      const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
