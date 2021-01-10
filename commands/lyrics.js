@@ -21,7 +21,8 @@ module.exports = {
       const b17 = "And there's an anarchy sign on the bus stop wall\nBut it's very hard to relate\nThe bus work to keep in line\nSo who's gonna smash the state?";
       const b18 = "You blame the system for the weather but carry on as ever\nYou go to work at half past eight and come back home at five\nBut you're still in this society\nSo what's your main priority\nRemain in the majority who never really cared?\nOr cultivate the hate to annihilate the state\nAre you prepared to die for your beliefs or just to dye your hair?";
       const b19 = "Eat shit! And live";
-      var lyricArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19];
+      const b20 = "I don't even want to kno\nHow in the hell you got screen time on this show";
+      var lyricArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20];
       var lyricSend = lyricArray[Math.floor(Math.random()*lyricArray.length)];
       message.channel.send(lyricSend).then().catch(console.error);
     },
